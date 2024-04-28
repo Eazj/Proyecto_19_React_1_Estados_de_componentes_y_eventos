@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Registro from "./Registro";
+import Alert from "./Alert";
 import { useState } from "react";
 
 function Formulario() {
@@ -9,15 +10,23 @@ function Formulario() {
   const [password, setpassword] = useState("");
   const [repeatpassword, setRepeatPassword] = useState("");
   const [error, setError] = useState(false);
+  const [mensaje, setMensaje] = useState("");
 
   const validarDatos = (e) => {
     e.preventDefault();
-    //Validación
+
     if (nombre === "" || email === "" || password === "" || repeatpassword === "") {
       setError(true);
+      setMensaje("Todos los campos son obligatorios");
+      return;
+    }
+    else if (password !== repeatpassword) {
+      setError(true);
+      setMensaje("Las contraseñas deben ser iguales");
       return;
     }
     setError(false);
+    setMensaje("Registro exitoso");
   };
 
   return (
@@ -60,7 +69,8 @@ function Formulario() {
       <Button variant="success" type="submit">
         Registrarse
       </Button>
-      {error ? <p className="error">Todos los campos son obligatorios</p> : null}
+      {!error && mensaje && <Alert mensaje={mensaje} tipo="success" />}
+      {error && <Alert mensaje={mensaje} tipo="danger" />}
     </Form>
   );
 }
