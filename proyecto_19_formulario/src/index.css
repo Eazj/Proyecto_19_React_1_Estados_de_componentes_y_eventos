@@ -8,8 +8,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
-  animation: cambioColor 2s infinite alternate;
 }
 .container_social{
   display: flex;
@@ -36,19 +34,4 @@ body{
   width: 30rem;
   height: 35rem;
   padding: 2rem;
-}
-
-@keyframes cambioColor {
-  0% {
-    background-color: #ff0000;
-  }
-  33% {
-    background-color: #00ff00;
-  }
-  66% {
-    background-color: #0000ff;
-  }
-  100% {
-    background-color: #ff0000;
-  }
 }
