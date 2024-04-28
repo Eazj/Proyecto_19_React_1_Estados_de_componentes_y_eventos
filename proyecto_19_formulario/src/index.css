@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+}
+.container_social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.social_logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 50%;
+
+}
+.social_logo img{
+  height: 2rem;
+}
+.formulario{
+  background-color: white;
+  border-radius: 2rem;
+  width: 25rem;
+  height: 30rem;
+  padding: 2rem;
+}
+.error {
+  padding: 10px;
+  color: white;
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  }
